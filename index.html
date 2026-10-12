@@ -6,26 +6,26 @@
   <meta content="noindex, nofollow" name="robots"/>
   <meta content="课程练习：个人介绍、技能与作品门户。" name="description"/>
   <title>
-   我的个人主页
+   陈锡琳 · 个人主页
   </title>
   <link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
   <!-- CSS 负责颜色、字体、布局；defer 让 JavaScript 在 HTML 解析完成后执行。 -->
   <link href="styles.css" rel="stylesheet"/>
-   <script src="works-data.js" defer></script>
-  <script src="works-render.js" defer></script>
-  <script src="app.js" defer></script>
+  <!-- 第 3 课只新增这一张样式表，不覆盖前两课的 styles.css。 -->
+  <link href="lesson-03-task.css" rel="stylesheet"/>
+  <!-- 美化层：独立文件，放在任务样式之后加载，不影响课程任务文件。 -->
+  <link href="polish.css" rel="stylesheet"/>
+ 
+  <script defer src="interactions.js"></script>
  </head>
  <body>
   <a class="skip-link" href="#main">
    跳到正文
   </a>
-  <!-- 第 4 课新增①：顶部阅读进度条，宽度由 JavaScript 控制 -->
-  <div class="reading-progress" id="reading-progress">
-  </div>
   <header class="site-header">
    <div class="container header-inner">
     <a class="brand" href="#about">
-     我的主页
+     我的个人简介
     </a>
     <!-- href="#栏目ID" 是原生锚点：即使不加载 JavaScript，也能跳到对应栏目。 -->
     <nav aria-label="主导航">
@@ -36,7 +36,7 @@
       经历
      </a>
      <a href="#projects">
-      科研
+      竞赛
      </a>
      <a href="#skills">
       技能
@@ -59,17 +59,18 @@
     <div class="container">
      <div class="hero-top">
       <div class="hero-copy">
+       <p class="greeting"></p>
        <h1>
-        林同学
+        陈锡琳
         <span>
          Lin
         </span>
        </h1>
        <p class="hero-role">
-        软件技术专业学生 · 前端开发学习者
+        人工智能技术应用专业学生 · 前端开发学习者
        </p>
        <p class="hero-school">
-        我的学校 · 我的班级
+        广东科学技术职业学院 · 25大模型应用产业学院班
        </p>
       </div>
       <div class="hero-visual">
@@ -85,6 +86,14 @@
       <p>
        HTML5、CSS3、JavaScript，正在学习 Git、数据库与网站部署。
       </p>
+     </div>
+     <div class="hometown">
+      <span class="eyebrow">
+       家乡
+      </span>
+      <a class="hometown-link" href="https://baike.baidu.com/item/%E9%98%B3%E6%B1%9F" rel="noopener noreferrer" target="_blank">
+       广东阳江
+      </a>
      </div>
      <div class="profile-details">
       <div>
@@ -108,7 +117,7 @@
         联系
        </span>
        <p>
-        请填写可公开的联系方式
+        <a class="contact-link" href="tel:13726751426">13726751426</a>
        </p>
       </div>
       <div>
@@ -116,7 +125,7 @@
         学校地址
        </span>
        <p>
-        请填写自己的学校地址
+        广东省珠海市金湾区珠海大道南侧65号
        </p>
       </div>
      </div>
@@ -135,7 +144,7 @@
       <div class="experience-item">
        <p class="experience-heading">
         <strong>
-         我的学校 · 软件技术专业
+         广东科学技术职业学院 · 人工智能技术应用专业
         </strong>
         <time>
          在读
@@ -145,27 +154,80 @@
         学习网页开发，用项目记录成长。
        </p>
       </div>
+      <div class="experience-item">
+       <p class="experience-heading">
+        <strong>
+         班级团支书
+        </strong>
+        <time>
+         现任
+        </time>
+       </p>
+       <p class="experience-detail">
+        负责班级团务与思想引领，组织主题团日活动。
+       </p>
+      </div>
+      <div class="experience-item">
+       <p class="experience-heading">
+        <strong>
+         计算机青年志愿者服务队队长兼委员
+        </strong>
+        <time>
+         现任
+        </time>
+       </p>
+       <p class="experience-detail">
+        统筹志愿服务项目，组织队员参与志愿活动。
+       </p>
+      </div>
+      <div class="experience-item">
+       <p class="experience-heading">
+        <strong>
+         18 栋楼长
+        </strong>
+        <time>
+         现任
+        </time>
+       </p>
+       <p class="experience-detail">
+        负责楼栋日常事务与信息传达。
+       </p>
+      </div>
      </div>
     </div>
    </section>
-   <section class="section" id="projects">
+      <section class="section" id="projects">
     <div class="container">
      <header class="section-heading">
       <h2>
-       项目经历
+       竞赛经历
       </h2>
      </header>
      <div class="section-content">
-      <article class="research-item">
+      <!-- TASK-HTML：复制 research-item 可增加一条竞赛奖项。 -->
+      <article class="research-item award award-gold">
        <h3>
         <time>
-         课程练习
+         一等奖
         </time>
-        个人主页
+        米兰设计周·中国高校设计学科师生优秀作品展（广东赛区）
        </h3>
-       <p>
-        项目内容：制作自己的网页，展示资料与作品，记录修改、测试与发布过程。
-       </p>
+      </article>
+      <article class="research-item award award-teal">
+       <h3>
+        <time>
+         金奖
+        </time>
+        中国国际大学生创新创业大赛（2026）校赛
+       </h3>
+      </article>
+      <article class="research-item award award-bronze">
+       <h3>
+        <time>
+         三等奖
+        </time>
+        第十五届“中国软件杯”南部赛区
+       </h3>
       </article>
      </div>
     </div>
@@ -180,22 +242,28 @@
      <div class="section-content">
       <ul class="skills-list">
        <li>
-        <strong>
-         网页内容
-        </strong>
-        HTML5 结构、图片、链接。
+        <div class="skill-head">
+         <strong>网页内容</strong>
+         <span class="skill-level">进阶</span>
+        </div>
+        <div class="skill-bar"><i style="width: 78%"></i></div>
+        <p>HTML5 结构、图片、链接。</p>
        </li>
        <li>
-        <strong>
-         页面样式
-        </strong>
-        CSS3 字体、颜色、响应式布局。
+        <div class="skill-head">
+         <strong>页面样式</strong>
+         <span class="skill-level">进阶</span>
+        </div>
+        <div class="skill-bar"><i style="width: 70%"></i></div>
+        <p>CSS3 字体、颜色、响应式布局。</p>
        </li>
        <li>
-        <strong>
-         开发过程
-        </strong>
-        JavaScript、Git、检查与部署。
+        <div class="skill-head">
+         <strong>开发过程</strong>
+         <span class="skill-level">入门</span>
+        </div>
+        <div class="skill-bar"><i style="width: 52%"></i></div>
+        <p>JavaScript、Git、检查与部署。</p>
        </li>
       </ul>
      </div>
@@ -211,15 +279,6 @@
        以下为教学示例，完成后可替换为自己的作品。
       </p>
      </header>
-     <!-- 第 5 课新增：筛选与排序工具条。里面的按钮由 JavaScript 生成，
-          不写 JS 时这里是空的，页面照常显示全部作品。 -->
-     <div class="works-toolbar">
-      <div class="works-tags" id="works-tags">
-      </div>
-      <button class="works-sort" id="works-sort" type="button">
-       按年份：新→旧
-      </button>
-     </div>
      <ol class="portfolio-list">
       <li class="work-card work-blog">
        <a href="https://ffd-p2-blog.netlify.app/" rel="noopener noreferrer" target="_blank">
@@ -336,12 +395,6 @@
     </div>
    </section>
   </main>
-  <!-- 第 4 课新增：这两块由 JavaScript 控制，不写 JS 时它们不会出现 -->
-  <p aria-live="polite" class="section-indicator" id="section-indicator">
-  </p>
-  <button aria-label="返回页面顶部" class="to-top" id="to-top" type="button">
-   ↑
-  </button>
   <footer>
    <div class="container footer-inner">
     <a href="#about">
@@ -352,5 +405,8 @@
     </a>
    </div>
   </footer>
+  <button class="to-top" type="button" aria-label="回到顶部">↑</button>
  </body>
 </html>
+
+<!-- 本课任务详见课堂任务.md。 -->
